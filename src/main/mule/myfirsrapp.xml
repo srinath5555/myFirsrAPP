@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="0e0cd8b6-3208-4d86-9334-940bb5cdc6e5" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="myfirsrappFlow" doc:id="69d8ee72-ef11-4966-b69f-43407e725389" >
+		<http:listener doc:name="Listener" doc:id="08725b74-a2fe-4eb4-b118-1e317747b0d6" config-ref="HTTP_Listener_config" path="/mytest"/>
+		<logger level="INFO" doc:name="Logger" doc:id="f4bfdd26-5d1a-4789-93eb-72b6ccb4ebfc" message="=== flow started ===="/>
+		<ee:transform doc:name="Transform Message" doc:id="55ff9662-46d0-4207-a1cc-ca964861acd5" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"message": " welcome"
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="7e7f35f0-a944-4cd9-882c-ccacb354ec4c" message="==== end ==="/>
+	</flow>
+</mule>
