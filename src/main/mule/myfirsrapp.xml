@@ -10,7 +10,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	</http:listener-config>
 	<flow name="myfirsrappFlow" doc:id="69d8ee72-ef11-4966-b69f-43407e725389" >
 		<http:listener doc:name="Listener" doc:id="08725b74-a2fe-4eb4-b118-1e317747b0d6" config-ref="HTTP_Listener_config" path="/mytest"/>
-		<logger level="INFO" doc:name="Logger" doc:id="f4bfdd26-5d1a-4789-93eb-72b6ccb4ebfc" message="=== flow started ===="/>
+		<logger level="INFO" doc:name="Logger" doc:id="f4bfdd26-5d1a-4789-93eb-72b6ccb4ebfc" message="=== flow started ====#[now()]"/>
 		<ee:transform doc:name="Transform Message" doc:id="55ff9662-46d0-4207-a1cc-ca964861acd5" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
@@ -21,6 +21,6 @@ output application/json
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
-		<logger level="INFO" doc:name="Logger" doc:id="7e7f35f0-a944-4cd9-882c-ccacb354ec4c" message="==== end ==="/>
+		<logger level="INFO" doc:name="Logger" doc:id="7e7f35f0-a944-4cd9-882c-ccacb354ec4c" message="==== end === #[now()]"/>
 	</flow>
 </mule>
