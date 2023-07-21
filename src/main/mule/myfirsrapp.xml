@@ -16,9 +16,93 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 				<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
 ---
-{
-	"message": " welcome"
-}]]></ee:set-payload>
+[
+                    {
+                        "Transaction_date": "1/2/09 6:17",
+                        "Product": "Product1",
+                        "Price": "1200",
+                        "Payment_Type": "Mastercard",
+                        "Name": "John",
+                        "City": "London",
+                        "State": "England",
+                        "Country": "United States",
+                        "Account_Created": "1/2/09 6:00",
+                        "Last_Login": "1/2/09 6:08",
+                        "Address":{
+                        "dno": "2-44-67",
+                        "city": "HYD",
+                        "pin": "666666"
+                        }
+                    },
+                    {
+                        "Transaction_date": "1/2/09 4:53",
+                        "Product": "Product1",
+                        "Price": "1200",
+                        "Payment_Type": "Mastercard",
+                        "Name": "Betina",
+                        "City": "Parkville                   ",
+                        "State": "MO",
+                        "Country": "United Kingdom",
+                        "Account_Created": "1/2/09 4:42",
+                        "Last_Login": "1/2/09 7:49",
+                        "Address":{
+                        "dno": "2-44-67",
+                        "city": "HYD",
+                        "pin": "666666"
+                        }
+                    },
+                    {
+                        "Transaction_date": "1/2/09 13:08",
+                        "Product": "Product1",
+                        "Price": "1200",
+                        "Payment_Type": "Mastercard",
+                        "Name": "Federica e Andrea",
+                        "City": "Astoria                     ",
+                        "State": "OR",
+                        "Country": "United States",
+                        "Account_Created": "1/1/09 16:21",
+                        "Last_Login": "1/3/09 12:32",
+                        "Address":{
+                        "dno": "2-44-67",
+                        "city": "HYD",
+                        "pin": "666666"
+                        }
+                    },
+                    {
+                        "Transaction_date": "1/3/09 14:44",
+                        "Product": "Product1",
+                        "Price": "31200",
+                        "Payment_Type": "Visa",
+                        "Name": "Gouya",
+                        "City": "Echuca",
+                        "State": "Victoria",
+                        "Country": "Australia",
+                        "Account_Created": "9/25/05 21:13",
+                        "Last_Login": "1/3/09 14:22",
+                        "Address":{
+                        "dno": "2-44-67",
+                        "city": "HYD",
+                        "pin": "666666"
+                        }
+                    },
+                    {
+                        "Transaction_date": "1/2/09 6:17",
+                        "Product": "Product1",
+                        "Price": "1200",
+                        "Payment_Type": "Mastercard",
+                        "Name": "John",
+                        "City": "London",
+                        "State": "England",
+                        "Country": "United States",
+                        "Account_Created": "1/2/09 6:00",
+                        "Last_Login": "1/2/09 6:08",
+                        "Address":{
+                        "dno": "2-44-67",
+                        "city": "HYD",
+                        "pin": "666666"
+                        }
+                    }
+                ]]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
 		<logger level="INFO" doc:name="Logger" doc:id="7e7f35f0-a944-4cd9-882c-ccacb354ec4c" message="==== end === #[now()]"/>
